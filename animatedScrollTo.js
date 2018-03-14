@@ -24,14 +24,14 @@
             var val = Math.floor(easeInOutQuad(now - animationStart, start, change, duration));
             if (lastpos) {
                 if (lastpos === element.scrollTop) {
-                    lastpos = val;
                     element.scrollTop = val;
+                    lastpos = element.scrollTop;
                 } else {
                     animating = false;
                 }
             } else {
-                lastpos = val;
                 element.scrollTop = val;
+                lastpos = element.scrollTop;
             }
             if (now > animationStart + duration) {
                 element.scrollTop = to;
